@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @lukeola
 - 👀 I’m interested in Programming
-- 🌱 I’m currently learning C
+- 🌱 I’m currently learning C & JS
 - 💞️ I’m looking to collaborate on fintech projects
 - 📫 How to reach me lukeolawale4@gmail.com
 
