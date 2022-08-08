@@ -11,15 +11,15 @@
 
 - 👯 I’m looking to collaborate on **Fintech Projects**
 
-- 👨‍💻 All of my projects are available at [www.lukeshub.site](https://lukeshub.site)
+- 👨‍💻 All of my projects are available at [www.lukeshub.site](http://lukeshub.site)
 
 - 📝 I regularly write articles on [linkedin.com/luke-olawale](linkedin.com/luke-olawale)
 
 - 💬 Ask me about **Python**
 
-- 📫 How to reach me **contact@lukeshub.site**
+- 📫 How to reach me [Contact](https://linktr.ee/lukeolawale)
 
-- 📄 Know about my experiences [https://linktr.ee/lukeolawale](https://linktr.ee/lukeolawale)
+- 📄 Know about my experiences [Linkedin](linkedin.com/luke-olawale)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
