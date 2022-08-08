@@ -13,7 +13,7 @@
 
 - 👨‍💻 All of my projects are available at [My Website](http://lukeshub.site)
 
-- 📝 I regularly write articles on [Linkedin](https://www.linkedin.com/in/luke-olawale/))
+- 📝 I regularly write articles on [Linkedin](https://www.linkedin.com/in/luke-olawale/)
 
 - 💬 Ask me about **Python**
 
