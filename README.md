@@ -17,9 +17,9 @@
 
 - 💬 Ask me about **Python**
 
-- 📫 How to reach me [Contact](https://linktr.ee/lukeolawale)
+- 📫 Reach me on my [Contact](https://linktr.ee/lukeolawale) page
 
-- 📄 Know about my experiences [Linkedin](https://linkedin.com/luke-olawale)
+- 📄 Know about my experiences on [Linkedin](https://linkedin.com/luke-olawale)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
