@@ -19,7 +19,7 @@
 
 - 📫 Reach me on my [Contact](https://linktr.ee/lukeolawale) page
 
-- 📄 Know about my experiences on [Linkedin](https://linkedin.com/luke-olawale)
+- 📄 Know about my experiences on [Linkedin](https://linkedin.com/in/luke-olawale/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
