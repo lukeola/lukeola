@@ -11,7 +11,7 @@
 
 - 👯 I’m looking to collaborate on **Fintech Projects**
 
-- 👨‍💻 All of my projects are available at [My Website](http://lukeshub.site)
+- 👨‍💻 All of my projects are available at [My Website](http://lukeolawale.com)
 
 - 📝 I regularly write articles on [Linkedin](https://www.linkedin.com/in/luke-olawale/)
 
