@@ -7,7 +7,7 @@
 
 - 🔭 I’m currently working on **An artist booking app**
 
-- 🌱 I’m currently learning **React.js**
+- 🌱 I’m currently learning **Node.js**
 
 - 👯 I’m looking to collaborate on **Fintech Projects**
 
@@ -15,7 +15,7 @@
 
 - 📝 I regularly write articles on [Linkedin](https://www.linkedin.com/in/luke-olawale/)
 
-- 💬 Ask me about **Python**
+- 💬 Ask me about **React**
 
 - 📫 Reach me on my [Contact](https://linktr.ee/lukeolawale) page
 
