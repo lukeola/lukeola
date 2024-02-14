@@ -12,7 +12,7 @@
 
 - 👨‍💻 All of my projects are available at [My Website](http://lukeolawale.com)
 
-- 💬 Ask me about **React**
+- 💬 Ask me about **React & Nextjs**
 
 - 📫 Reach me on my [Contact](https://linktr.ee/lukeolawale) page
 
