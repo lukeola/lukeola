@@ -6,7 +6,7 @@
 <p align="left"> <a href="https://twitter.com/lukeolawale1" target="blank"><img src="https://img.shields.io/twitter/follow/lukeolawale1?logo=twitter&style=for-the-badge" alt="lukeolawale1" /></a> </p>
 
 
-- 🌱 I’m currently learning **Node.js**
+- 🌱 I’m currently learning **Nest.js**
 
 - 👯 I’m looking to collaborate on **Fintech Projects**
 
