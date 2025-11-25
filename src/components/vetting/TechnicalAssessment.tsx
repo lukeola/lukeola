@@ -65,7 +65,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
       setIsLoading(true);
       setError(null);
 
-      // Simulated API call - replace with actual API call
+      // API call expects response format: { data: AssessmentData } or { error: string }
       const response = await fetch(`/api/assessments/${assessmentId}`);
       const data: ApiResponse<AssessmentData> = await response.json();
 
@@ -318,6 +318,13 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
 
     if (!currentQuestion) return null;
 
+    // Helper to safely get string value from stored answers
+    const getStoredStringValue = (qId: string | undefined): string => {
+      if (!qId) return "";
+      const answer = storedAnswers?.[qId];
+      return typeof answer === "string" ? answer : "";
+    };
+
     switch (questionType) {
       case "multiple_choice":
         if (!answerOptions || answerOptions.length === 0) {
@@ -355,7 +362,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
           <textarea
             className="w-full p-3 border border-gray-300 rounded-lg min-h-[150px]"
             placeholder="Type your answer here..."
-            value={(storedAnswers?.[questionId ?? ""] as string) ?? ""}
+            value={getStoredStringValue(questionId)}
             onChange={(e) => handleAnswerSelect(e.target.value)}
           />
         );
@@ -369,7 +376,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
             <textarea
               className="w-full p-3 font-mono text-sm min-h-[200px] bg-gray-900 text-green-400"
               placeholder="// Write your code here..."
-              value={(storedAnswers?.[questionId ?? ""] as string) ?? ""}
+              value={getStoredStringValue(questionId)}
               onChange={(e) => handleAnswerSelect(e.target.value)}
             />
           </div>
