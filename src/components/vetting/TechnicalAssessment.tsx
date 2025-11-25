@@ -71,12 +71,12 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
 
       // Safe access pattern for nested data
       if (data?.data) {
-        setAssessmentData(data?.data);
+        setAssessmentData(data.data);
         
         // Safe access for questions array and first question's time limit
-        const firstQuestion = data?.data?.questions?.[0];
+        const firstQuestion = data.data?.questions?.[0];
         if (firstQuestion?.time_limit_sec) {
-          setTimeRemaining(firstQuestion?.time_limit_sec);
+          setTimeRemaining(firstQuestion.time_limit_sec);
         }
       } else {
         setError("Failed to load assessment data");
@@ -101,24 +101,6 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
       fetchAssessmentData();
     }
   }, [assessmentId, fetchAssessmentData]);
-
-  // Timer effect with safe access
-  useEffect(() => {
-    if (timeRemaining === null || timeRemaining <= 0) return;
-
-    const timer = setInterval(() => {
-      setTimeRemaining((prev) => {
-        if (prev === null || prev <= 1) {
-          clearInterval(timer);
-          handleNextQuestion();
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [timeRemaining]);
 
   // Get current question with safe access
   const getCurrentQuestion = useCallback((): Question | undefined => {
@@ -169,43 +151,6 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
     [getCurrentQuestion, storedAnswers]
   );
 
-  // Navigate to next question with safe access
-  const handleNextQuestion = useCallback(() => {
-    const totalQuestions = getTotalQuestions();
-    const nextIndex = currentQuestionIndex + 1;
-
-    if (nextIndex < totalQuestions) {
-      setCurrentQuestionIndex(nextIndex);
-      
-      // Safe access for next question's time limit
-      const nextQuestion = assessmentData?.questions?.[nextIndex];
-      if (nextQuestion?.time_limit_sec) {
-        setTimeRemaining(nextQuestion?.time_limit_sec);
-      } else {
-        setTimeRemaining(null);
-      }
-    } else {
-      // Assessment complete
-      handleSubmit();
-    }
-  }, [currentQuestionIndex, getTotalQuestions, assessmentData]);
-
-  // Navigate to previous question
-  const handlePreviousQuestion = useCallback(() => {
-    if (currentQuestionIndex > 0) {
-      const prevIndex = currentQuestionIndex - 1;
-      setCurrentQuestionIndex(prevIndex);
-      
-      // Safe access for previous question's time limit
-      const prevQuestion = assessmentData?.questions?.[prevIndex];
-      if (prevQuestion?.time_limit_sec) {
-        setTimeRemaining(prevQuestion?.time_limit_sec);
-      } else {
-        setTimeRemaining(null);
-      }
-    }
-  }, [currentQuestionIndex, assessmentData]);
-
   // Submit assessment with safe access
   const handleSubmit = useCallback(async () => {
     try {
@@ -248,6 +193,61 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
       setIsLoading(false);
     }
   }, [assessmentData, storedAnswers, onComplete, onError]);
+
+  // Navigate to next question with safe access
+  const handleNextQuestion = useCallback(() => {
+    const totalQuestions = getTotalQuestions();
+    const nextIndex = currentQuestionIndex + 1;
+
+    if (nextIndex < totalQuestions) {
+      setCurrentQuestionIndex(nextIndex);
+      
+      // Safe access for next question's time limit
+      const nextQuestion = assessmentData?.questions?.[nextIndex];
+      if (nextQuestion?.time_limit_sec) {
+        setTimeRemaining(nextQuestion.time_limit_sec);
+      } else {
+        setTimeRemaining(null);
+      }
+    } else {
+      // Assessment complete
+      handleSubmit();
+    }
+  }, [currentQuestionIndex, getTotalQuestions, assessmentData, handleSubmit]);
+
+  // Timer effect with safe access
+  useEffect(() => {
+    if (timeRemaining === null || timeRemaining <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev === null || prev <= 1) {
+          clearInterval(timer);
+          handleNextQuestion();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeRemaining, handleNextQuestion]);
+
+  // Navigate to previous question
+  const handlePreviousQuestion = useCallback(() => {
+    if (currentQuestionIndex > 0) {
+      const prevIndex = currentQuestionIndex - 1;
+      setCurrentQuestionIndex(prevIndex);
+      
+      // Safe access for previous question's time limit
+      const prevQuestion = assessmentData?.questions?.[prevIndex];
+      if (prevQuestion?.time_limit_sec) {
+        setTimeRemaining(prevQuestion.time_limit_sec);
+      } else {
+        setTimeRemaining(null);
+      }
+    }
+  }, [currentQuestionIndex, assessmentData]);
 
   // Get answer for a specific question with safe access
   const getAnswerForQuestion = useCallback(
@@ -298,7 +298,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
                 setCurrentQuestionIndex(index);
                 const selectedQuestion = assessmentData?.questions?.[index];
                 if (selectedQuestion?.time_limit_sec) {
-                  setTimeRemaining(selectedQuestion?.time_limit_sec);
+                  setTimeRemaining(selectedQuestion.time_limit_sec);
                 }
               }}
               aria-label={`Go to question ${index + 1}`}
