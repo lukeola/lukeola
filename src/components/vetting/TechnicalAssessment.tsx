@@ -325,7 +325,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
         }
         return (
           <div className="space-y-2">
-            {answerOptions.map((option) => {
+            {answerOptions.map((option, index) => {
               const optionId = option?.id;
               const optionText = option?.text;
               const currentAnswer = storedAnswers?.[questionId ?? ""];
@@ -335,7 +335,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
 
               return (
                 <button
-                  key={optionId ?? `option-${optionText}`}
+                  key={optionId ?? `option-${index}`}
                   className={`w-full p-3 text-left border rounded-lg transition-colors ${
                     isSelected
                       ? "bg-blue-100 border-blue-500"
