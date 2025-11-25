@@ -421,7 +421,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
   }
 
   // No questions state with safe access
-  if (!assessmentData?.questions || assessmentData?.questions?.length === 0) {
+  if (!assessmentData?.questions?.length) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
         <p className="text-gray-600">No questions available for this assessment.</p>
@@ -440,7 +440,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
           {assessmentData?.title ?? "Technical Assessment"}
         </h1>
         {assessmentData?.description && (
-          <p className="text-gray-600 mt-2">{assessmentData?.description}</p>
+          <p className="text-gray-600 mt-2">{assessmentData.description}</p>
         )}
       </div>
 
