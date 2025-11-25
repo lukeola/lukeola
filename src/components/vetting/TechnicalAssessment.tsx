@@ -286,7 +286,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
 
           return (
             <button
-              key={questionId ?? `question-${index}`}
+              key={questionId ?? `fallback-question-${index}`}
               className={`w-3 h-3 rounded-full transition-colors ${
                 isCurrent
                   ? "bg-blue-500"
@@ -335,7 +335,7 @@ const TechnicalAssessment: React.FC<TechnicalAssessmentProps> = ({
 
               return (
                 <button
-                  key={optionId ?? `option-${index}`}
+                  key={optionId ?? `fallback-option-${index}`}
                   className={`w-full p-3 text-left border rounded-lg transition-colors ${
                     isSelected
                       ? "bg-blue-100 border-blue-500"
